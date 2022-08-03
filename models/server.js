@@ -21,6 +21,9 @@ class Server {
         //cors
         this.app.use(cors());
 
+        //lectura y parseo body
+        this.app.use( express.json() );
+
     }
     routes() {
         this.app.use( this.charactersPath, require('../routes/character'));

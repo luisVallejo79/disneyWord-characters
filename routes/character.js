@@ -12,9 +12,9 @@ router.get('/', characterGet );
 
 router.post('/', characterPost );
 
-router.put('/', characterPut );
+router.put('/:id', characterPut );
 
-router.delete('/', characterDelete );
+router.delete('/:id', characterDelete );
 
 
 module.exports = router; 
