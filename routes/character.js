@@ -4,11 +4,14 @@ const {
     characterGet,
     characterPost,
     characterPut,
-    characterDelete, } = require('../controllers/characters.controller');
+    characterDelete,
+    characterGetById, } = require('../controllers/characters.controller');
 
 const router = Router();
 
 router.get('/', characterGet );
+
+router.get('/:id', characterGetById );
 
 router.post('/', characterPost );
 
