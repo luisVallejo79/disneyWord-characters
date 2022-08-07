@@ -1,6 +1,7 @@
 const { request, response } = require("express");
 const bcrypt = require("bcrypt");
 const User = require("../models/user.model");
+const sgMail = require('@sendgrid/mail');
 
 const userGet = async(req = request, res = response) => {
   
@@ -29,6 +30,34 @@ const userPost = async (req, res = response) => {
   const salt = bcrypt.genSaltSync(10);
   user.password = bcrypt.hashSync(password, salt);
   await user.save();
+
+  //send mail
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+  const msg = {
+    to: email,
+    from: 'emaikemynode@gmail.com', // Use the email address or domain you verified above
+    subject: 'successful registration confirmation',
+    text: 'welcome mail with Node.js',
+    html: '<strong>successful registration confirmation with Node.js</strong>',
+  };
+  
+  sgMail
+    .send(msg)
+    .then(() => {}, error => {
+      console.error(error);
+  
+      if (error.response) {
+        console.error(error.response.body)
+      }
+    });
+
+
+
+
+
+
+
   res.json({
     user,
   });
