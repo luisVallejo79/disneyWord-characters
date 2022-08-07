@@ -1,23 +1,23 @@
 
 const { Schema, model } = require('mongoose');
 
-const MovieSchema = Schema({
+const genreSchema = Schema({
     name: {
         type: String,
         required: [true, 'name is required'],
         unique : true
     },
 
-    Image : {
-        type: Number,
+    image : {
+        type: String,
         required: [true, 'Image is required'],
     },
 
-    moviesAssociated: {
+    moviesAssociated: [{
         type: Schema.Types.ObjectId,
         ref: 'Movie',
         required: true
-    },
+    }],
     
     status: {
         type: Boolean,
@@ -25,4 +25,4 @@ const MovieSchema = Schema({
     }
 });
 
-module.exports = model( 'Movie', MovieSchema );
+module.exports = model( 'Genre', genreSchema );

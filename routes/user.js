@@ -12,7 +12,7 @@ const { findUserById, findEmail } = require('../validators/db-validators');
 
 const router = Router();
 
-router.get('/', userGet );
+router.get('/',[validateJWT], userGet );
 
 router.post('/', [
     check('email', 'Format Email not valid').isEmail(),

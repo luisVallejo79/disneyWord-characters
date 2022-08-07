@@ -3,8 +3,8 @@ const { Schema, model } = require('mongoose');
 
 const MovieSchema = Schema({
 
-    Image : {
-        type: Number,
+    image : {
+        type: String,
         required: [true, 'Image is required'],
     },
 
@@ -16,21 +16,17 @@ const MovieSchema = Schema({
 
     creationDate: {
         type: Date,
-        required: [true, 'Creation Date is required'],
-        unique : true
+        default : Date.now
     },
 
-    Rating : {
-        type: Number,
-        required: [true, 'Rating is required'],
-        
-    },
+    rating : { type: Number, min: 1, max: 5,
+        require :true },
 
-    charactersAssociated: {
+    charactersAssociated: [{
         type: Schema.Types.ObjectId,
         ref: 'Character',
         required: true
-    },
+    }],
 
     status: {
         type: Boolean,

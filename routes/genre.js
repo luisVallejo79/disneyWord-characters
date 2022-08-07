@@ -6,18 +6,37 @@ const {
     genrePut,
     genreDelete,
     genreGetById, } = require('../controllers/genre.controller');
+const { check } = require('express-validator');
+const { validateField } = require('../middlewares/validateFields');
+const { validateJWT } = require('../middlewares/validateJWT');
 
 const router = Router();
 
-router.get('/', genreGet );
+router.get('/', [validateJWT], genreGet );
 
-router.get('/:id', genreGetById );
+router.get('/:id',[
+    validateJWT,
+    check('id', 'Invalid MongoId').isMongoId(),
+    validateField], genreGetById );
 
-router.post('/', genrePost );
+router.post('/',[
+    validateJWT,
+    check('name', 'Name is required').notEmpty(),
+    check('image', 'image is required').notEmpty(),
+    check('moviesAssociated', 'Movies Associated is required').notEmpty(),
+    validateField], genrePost );
 
-router.put('/:id', genrePut );
+router.put('/:id',[
+    validateJWT,
+    check('id', 'Invalid MongoId').isMongoId(),
+    validateField
+], genrePut );
 
-router.delete('/:id', genreDelete );
+router.delete('/:id', [
+    validateJWT,
+    check('id', 'Invalid MongoId').isMongoId(),
+    validateField
+], genreDelete );
 
 
 module.exports = router; 

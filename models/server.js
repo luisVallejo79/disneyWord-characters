@@ -6,11 +6,12 @@ class Server {
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.charactersPath = '/api/characters';
-        this.userPath = '/api/register';
         this.authPath = '/api/auth';
-        this.moviePath = '/api/movie';
+        this.charactersPath = '/api/characters';
         this.genrePath = '/api/genre';
+        this.moviePath = '/api/movie';
+        this.userPath = '/api/register';
+        this.searchPath = '/api/search';
         
         // middleware
         this.middleware();
@@ -32,9 +33,10 @@ class Server {
     routes() {
         this.app.use( this.authPath, require('../routes/auth'));
         this.app.use( this.charactersPath, require('../routes/character'));
-        this.app.use( this.userPath, require('../routes/user'));
-        this.app.use( this.moviePath, require('../routes/movies'));
         this.app.use( this.genrePath, require('../routes/genre'));
+        this.app.use( this.moviePath, require('../routes/movies'));
+        this.app.use( this.userPath, require('../routes/user'));
+        this.app.use( this.searchPath, require('../routes/search'));
         
     };
 

@@ -2,37 +2,37 @@
 const { Schema, model } = require('mongoose');
 
 const CharacterSchema = Schema({
-    Image : {
+    image : {
         type: String,
         required: [true, 'Image is required']
     },
 
     name: {
         type: String,
-        required: [true, 'Name is required']
+        required: [true, 'Name is required'],
+        unique : true
     },
 
     age : {
         type: Number,
-        required: [true, 'Age is required'],
-        unique: true
+        required: [true, 'Age is required']
     },
 
     weight: {
         type: Number,
-        required: [true, 'Password is required'],
+        required: [true, 'weight is required']
     },
 
     history: {
         type: String,
-        required: [true, 'Weight is required'],
+        required: [true, 'history is required'],
     },
 
-    moviesAssociated: {
-        type: Schema.Types.ObjectId,
-        ref: 'Movie',
-        required: true
-    },
+    // moviesAssociated: {
+        // type: Schema.Types.ObjectId,
+        // ref: 'Movie',
+        // required: true
+    // },
 
     status: {
         type: Boolean,
