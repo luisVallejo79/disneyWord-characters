@@ -1,0 +1,632 @@
+{
+	"info": {
+		"_postman_id": "02facfd3-b2cf-4221-ba4b-9c545d2c0aa4",
+		"name": "Disney-World",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7532890"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"userTestSendMail\",\r\n    \"email\":\"luisf.vallejo2710@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk2NjEzOTAsImV4cCI6MTY1OTY4Mjk5MH0.p2s_HMhbDSBoVrhk32SWjsoKamVjNrwSOYQw-YinHco",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"newNameUpdated\",\r\n    \"password\":\"6548795\",\r\n    \"status\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register/62ec0a56f4918008247d677b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register",
+						"62ec0a56f4918008247d677b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk2NjEzOTAsImV4cCI6MTY1OTY4Mjk5MH0.p2s_HMhbDSBoVrhk32SWjsoKamVjNrwSOYQw-YinHco",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/register/62ec0a6bf4918008247d6781",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register",
+						"62ec0a6bf4918008247d6781"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"emailtest4@test.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCharacters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTI0OTcsImV4cCI6MTY1OTkxNDA5N30.WIMqkdM8G1BnRewCGRMS5_mbL-iSPxAmVHjEtMF7OrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCharacterById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTI0OTcsImV4cCI6MTY1OTkxNDA5N30.WIMqkdM8G1BnRewCGRMS5_mbL-iSPxAmVHjEtMF7OrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/characters/62eed79efd5d95b06e4abebf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"characters",
+						"62eed79efd5d95b06e4abebf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCharacter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\": \"https://previews.123rf.com/images/machiavel/machiavel1604/machiavel160400005/55622811-marne-la-vall%C3%A9e-francia-04-02-2016-una-estatua-de-mickey-mouse-en-disneyland-par%C3%ADs-estudio.jpg\",\r\n    \"name\" : \"nameCharacter1\",\r\n    \"age\" : 25,\r\n    \"weight\" : 25,\r\n    \"history\" : \"Lorem Ipsum is simply dummy text of the printing and typesetting industry.\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutCharacter",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTI0OTcsImV4cCI6MTY1OTkxNDA5N30.WIMqkdM8G1BnRewCGRMS5_mbL-iSPxAmVHjEtMF7OrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"status\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/characters/62ec0a7ef4918008247d6787",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"characters",
+						"62ec0a7ef4918008247d6787"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCharacter",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/characters/62eec4428bd910e89c81cdf3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"characters",
+						"62eec4428bd910e89c81cdf3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getmovies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTI0OTcsImV4cCI6MTY1OTkxNDA5N30.WIMqkdM8G1BnRewCGRMS5_mbL-iSPxAmVHjEtMF7OrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMoveById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movie/62eef0143503c12cab6aecec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie",
+						"62eef0143503c12cab6aecec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostMovie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTQ1NDAsImV4cCI6MTY1OTkxNjE0MH0.jjd_x6FUiQSY5FtG_cOWOj4Yh564eKBnQQ4_Vtw21-Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\" : \"https://previews.123rf.com/images/monticello/monticello2002/monticello200200246/140476066-poznan-pol-4-de-febrero-de-2020-televisor-de-pantalla-plana-que-muestra-el-logotipo-de-walt-disney-p.jpg\",\r\n    \"title\": \"titleMovieTes10\",\r\n    \"rating\" : 5,\r\n    \"charactersAssociated\": [\r\n        \"62eed79efd5d95b06e4abebf\",\r\n        \"62eed7ecbce5c96b06151c64\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutMovie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"TittleUpdated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movie/62eef0143503c12cab6aecec",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie",
+						"62eef0143503c12cab6aecec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMovie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movie/62eeefc5e13b46a4bee94b86",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movie",
+						"62eeefc5e13b46a4bee94b86"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGenres",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTI0OTcsImV4cCI6MTY1OTkxNDA5N30.WIMqkdM8G1BnRewCGRMS5_mbL-iSPxAmVHjEtMF7OrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/genre?au",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"genre"
+					],
+					"query": [
+						{
+							"key": "au",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGenreById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTI0OTcsImV4cCI6MTY1OTkxNDA5N30.WIMqkdM8G1BnRewCGRMS5_mbL-iSPxAmVHjEtMF7OrQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/genre/62eeff57144e4589ca52c3bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"genre",
+						"62eeff57144e4589ca52c3bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostGenre",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTQ1NDAsImV4cCI6MTY1OTkxNjE0MH0.jjd_x6FUiQSY5FtG_cOWOj4Yh564eKBnQQ4_Vtw21-Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" :\"nameGenre10\",\r\n    \"image\" :\"https://previews.123rf.com/images/polifoto/polifoto2002/polifoto200200059/141073585-roma-italia-25-de-febrero-de-2020-fabio-volo-durante-el-photocall-de-la-pel%C3%ADcula-animada-onward-beyo.jpg\",\r\n    \"moviesAssociated\" : [\"62eeefc5e13b46a4bee94b86\", \"62eef0143503c12cab6aecec\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/genre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"genre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutGenre",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTQ1NDAsImV4cCI6MTY1OTkxNjE0MH0.jjd_x6FUiQSY5FtG_cOWOj4Yh564eKBnQQ4_Vtw21-Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"NameUpdated\",\r\n    \"moviesAssociated\" : [\"62eeefc5e13b46a4bee94b86\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/genre/62eeff57144e4589ca52c3bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"genre",
+						"62eeff57144e4589ca52c3bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteGenre",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVjMGE3N2Y0OTE4MDA4MjQ3ZDY3ODQiLCJpYXQiOjE2NTk4OTQ1NDAsImV4cCI6MTY1OTkxNjE0MH0.jjd_x6FUiQSY5FtG_cOWOj4Yh564eKBnQQ4_Vtw21-Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/genre/62ef03c1605948ea768fe252",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"genre",
+						"62ef03c1605948ea768fe252"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CharactersFindByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/search/character/character",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"search",
+						"character",
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MovieFindByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/search/movie/titleMovieTest1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"search",
+						"movie",
+						"titleMovieTest1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
