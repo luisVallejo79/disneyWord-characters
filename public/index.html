@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login Access</h1>
-</body>
+    <title>Google SingIn</title>
+  </head>
+  <body>
+    <h1>Google Login Access</h1>
+    <div
+      id="g_id_onload"
+      data-client_id="763459282793-ps91a0tm5gi4i3q2gt29oinua5tl9kv8.apps.googleusercontent.com"
+      data-callback="handleCredentialResponse"
+      data-auto_prompt="false"
+      data-auto-select="true">
+    </div>
+
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-shape="rectangular"
+      data-logo_alignment="left">
+    </div>
+
+    <button id="google_sing_out"> SingOut</button>
+    <hr>
+    <script>
+      function handleCredentialResponse(response) {
+        //id token google
+        //console.log(response.credential);
+        const body = { id_token: response.credential };
+        fetch("http://localhost:3000/api/auth/google", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body),
+        })
+          .then((r) => r.json())
+          .then((resp) => {
+            console.log(resp )
+            localStorage.setItem('email', resp.user.email)
+          })
+          .catch(console.warn);
+      }
+      const button = document.getElementById( 'google_sing_out' )
+        button.onclick = () => {
+        console.log( google.accounts.id );
+        google.accounts.id.revoke(localStorage.getItem('email'), done => {
+          console.log('consent revoked');
+            localStorage.clear()
+            location.reload()
+        });
+      }
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </body>
 </html>
